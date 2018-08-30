@@ -323,7 +323,7 @@ history -c
 # info
 clear
 echo "-------------------------------WALA NA! FINISH NA!!-----------------------------"
-echo "--------------------------- Configuration Setup Server -------------------------"               "
+echo "--------------------------- Configuration Setup Server -------------------------"
 echo "                               Created by ThataVPN                              "
 echo "--------------------------------------------------------------------------------"
 echo ""  | tee -a log-install.txt
