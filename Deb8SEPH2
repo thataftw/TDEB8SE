@@ -146,6 +146,10 @@ username-as-common-name
 plugin /usr/lib/openvpn/openvpn-plugin-auth-pam.so login
 server 192.168.100.0 255.255.255.0
 ifconfig-pool-persist ipp.txt
+sndbuf 0
+rcvbuf 0
+push "sndbuf 393216"
+push "rcvbuf 393216"
 push "redirect-gateway def1 bypass-dhcp"
 push "dhcp-option DNS 1.1.1.1"
 push "dhcp-option DNS 1.0.0.1"
@@ -191,7 +195,13 @@ mute-replay-warnings
 auth-user-pass
 redirect-gateway def1
 script-security 2
-route 0.0.0.0 0.0.0.0
+push "route 192.168.100.0 255.255.255.0"
+sndbuf 0
+rcvbuf 0
+push "sndbuf 393216"
+push "rcvbuf 393216"
+tun-mtu 1400 
+mssfix 1360
 route-method exe
 route-delay 2
 cipher AES-128-CBC
